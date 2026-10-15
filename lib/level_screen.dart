@@ -11,7 +11,6 @@ class LevelScreen extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 40),
-            // Judul Level
             const Text(
               'LEVEL',
               style: TextStyle(
@@ -38,10 +37,6 @@ class LevelScreen extends StatelessWidget {
                   _buildLevelButton('Level 2', const Color(0xFFB55D10)),
                   const SizedBox(height: 20),
                   _buildLevelButton('Level 3', const Color(0xFFA12727)),
-                  const SizedBox(height: 20),
-                  _buildLevelButton('Level 5', const Color(0xFFB55D10)),
-                  const SizedBox(height: 20),
-                  _buildLevelButton('Level 6', const Color(0xFFA12727)),
                 ],
               ),
             ),

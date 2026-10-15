@@ -15,72 +15,68 @@ class _PengaturanScreenState extends State<PengaturanScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFC79836),
-      body: Column(
-        children: [
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.only(top: 50, bottom: 20),
-            decoration: const BoxDecoration(
-              color: Color(0xFFB71C1C),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
-              ),
-            ),
-            child: const Center(
-              child: Text(
-                'Pengaturan',
-                style: TextStyle(
-                  fontSize: 36,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/gambar/Background.png'),
+            fit: BoxFit.cover,
           ),
-          const SizedBox(height: 60),
-
-          _buildSliderRow('Musik', _musikValue, (value) {
-            setState(() {
-              _musikValue = value;
-            });
-          }),
-          const SizedBox(height: 40),
-
-          _buildSliderRow('Suara', _suaraValue, (value) {
-            setState(() {
-              _suaraValue = value;
-            });
-          }),
-
-          const Spacer(),
-
-          SizedBox(
-            width: 200,
-            height: 60,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFFD7CCC8), // Abu-abu muda
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  side: const BorderSide(color: Color(0xFFB71C1C), width: 4),
-                ),
-              ),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text(
-                'Kembali',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Color(0xFFB71C1C),
-                  fontWeight: FontWeight.bold,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Judul Game
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.only(top: 50, bottom: 0),
+              child: Transform.scale(
+                scaleX: 1.08,
+                child: Image.asset(
+                  'assets/gambar/Pengaturan_logo.png', // logo
+                  width: double.infinity,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
-          ),
-          const SizedBox(height: 50),
-        ],
+            const SizedBox(height: 60),
+
+            _buildSliderRow('Musik', _musikValue, (value) {
+              setState(() {
+                _musikValue = value;
+              });
+            }),
+            const SizedBox(height: 40),
+
+            _buildSliderRow('Suara', _suaraValue, (value) {
+              setState(() {
+                _suaraValue = value;
+              });
+            }),
+
+            const Spacer(),
+
+            Align(
+              alignment: Alignment.center,
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 20),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: SizedBox(
+                    width: 200,
+                    height: 100,
+                    child: Image.asset(
+                      'assets/tombol/Kembali.png',
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 50),
+          ],
+        ),
       ),
     );
   }
