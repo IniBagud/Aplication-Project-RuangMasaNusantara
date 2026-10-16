@@ -61,6 +61,8 @@ flutter:
     - assets/gambar/Cerita_kemerdekaan.png
     - assets/gambar/Tentang_kami.png
     - assets/gambar/Pengaturan_logo.png
+    - assets/gambar/Level.png
+    - assets/gambar/sejarah_kemerdekaan.png
     - assets/tombol/tombol_mulai.png
     - assets/tombol/tombol_pengaturan.png
     - assets/tombol/tombol_tentangkami.png
@@ -68,6 +70,10 @@ flutter:
     - assets/tombol/Lanjut_besar.png
     - assets/tombol/Lanjut_kecil.png
     - assets/tombol/Pengaturan_fix.png
+    - assets/tombol/Level1.png
+    - assets/tombol/Level2.png
+    - assets/tombol/Level3.png
+    - assets/tombol/Kembali_besar.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:

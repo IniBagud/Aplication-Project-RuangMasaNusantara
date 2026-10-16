@@ -16,7 +16,7 @@ class MenuScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Judul Game
+            // Judul
             Center(
               child: Transform.translate(
                 offset: Offset(0, 80),
@@ -30,27 +30,27 @@ class MenuScreen extends StatelessWidget {
             ),
             const SizedBox(height: 200),
 
-            _buildImageButton(
+            imageButton(
               imagePath: 'assets/tombol/tombol_mulai.png',
               width: 600,
               height: 120,
-              onPressed: () {
-                Navigator.pushNamed(context, '/level');
+              onTap: () {
+                Navigator.pushNamed(context, '/pilih_cerita');
               },
             ),
             const SizedBox(height: 0),
-            _buildImageButton(
+            imageButton(
               imagePath: 'assets/tombol/Pengaturan_fix.png',
               width: 260,
               height: 100,
-              onPressed: () {
+              onTap: () {
                 Navigator.pushNamed(context, '/pengaturan');
               },
             ),
             const SizedBox(height: 13),
-            _buildImageButton(
+            imageButton(
               imagePath: 'assets/tombol/tombol_tentangkami.png',
-              onPressed: () {
+              onTap: () {
                 Navigator.pushNamed(context, '/tentang_kami');
               },
               width: 600,
@@ -62,14 +62,14 @@ class MenuScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildImageButton({
+  Widget imageButton({
     required String imagePath,
-    required VoidCallback onPressed,
+    required VoidCallback onTap,
     double width = 0,
     double height = 0,
   }) {
     return InkWell(
-      onTap: onPressed,
+      onTap: onTap,
       child: Image.asset(
         imagePath,
         width: width,

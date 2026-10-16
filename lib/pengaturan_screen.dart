@@ -67,7 +67,7 @@ class _PengaturanScreenState extends State<PengaturanScreen> {
                     width: 200,
                     height: 100,
                     child: Image.asset(
-                      'assets/tombol/Kembali.png',
+                      'assets/tombol/Kembali_besar.png',
                       fit: BoxFit.contain,
                     ),
                   ),

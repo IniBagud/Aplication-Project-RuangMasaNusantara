@@ -16,22 +16,17 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
-    // Inisialisasi Durasi Animasi (Total 3 Detik)
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
     );
 
-    // Animasi Transisi Opasitas (Fade In -> Hold -> Fade Out)
     _opacityAnimation = TweenSequence<double>([
       TweenSequenceItem(
         tween: Tween(begin: 0.0, end: 1.0),
         weight: 30,
       ), // Fade In
-      TweenSequenceItem(
-        tween: Tween(begin: 1.0, end: 1.0),
-        weight: 40,
-      ), // Hold (Diam)
+      TweenSequenceItem(tween: Tween(begin: 1.0, end: 1.0), weight: 40), // Hold
       TweenSequenceItem(
         tween: Tween(begin: 1.0, end: 0.0),
         weight: 30,
@@ -40,7 +35,6 @@ class _SplashScreenState extends State<SplashScreen>
 
     _controller.forward();
 
-    // Berpindah ke Menu Utama setelah animasi selesai
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
         Navigator.pushReplacementNamed(context, '/menu');
